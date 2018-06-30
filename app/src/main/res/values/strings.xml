@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Journals</string>
+
+    <string name="sign_in">Sign In</string>
+    <string name="enter_date">Enter Date</string>
+    <string name="enter_topic">Title</string>
+    <string name="enter_text">Enter Text to Diary</string>
+    <string name="add_button">Click to add</string>
+</resources>

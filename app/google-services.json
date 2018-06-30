@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "113765251508",
+    "firebase_url": "https://journalapp-1eff6.firebaseio.com",
+    "project_id": "journalapp-1eff6",
+    "storage_bucket": "journalapp-1eff6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113765251508:android:22b8f859723ba4e1",
+        "android_client_info": {
+          "package_name": "com.borwe.journals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113765251508-ace70a3qlk6gf6lrp1956d5l647smr2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.borwe.journals",
+            "certificate_hash": "8b1b260890f32a87b62fb9618d67a57926321e28"
+          }
+        },
+        {
+          "client_id": "113765251508-m74anmc8ie9p1df3cq1j0kl03q538d6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ1snIHLKfLpHv4bJRSP3iV3_h8gEMtW8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113765251508-m74anmc8ie9p1df3cq1j0kl03q538d6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
