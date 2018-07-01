@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".NotesAdd">
+    tools:context=".NotesUpdate">
 
     <TextView
         android:id="@+id/input_date"
@@ -15,6 +15,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="@string/enter_date"
+        android:inputType="date"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -42,11 +43,12 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/add_notes_button"
+        android:id="@+id/update_notes_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="@string/add_button"
+        android:text="@string/note_update"
         android:textColor="@color/cardview_light_background" />
+
 
 </LinearLayout>

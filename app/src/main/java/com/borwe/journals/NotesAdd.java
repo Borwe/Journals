@@ -6,9 +6,11 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -17,7 +19,7 @@ import model.Note;
 
 public class NotesAdd extends AppCompatActivity {
 
-    EditText dateInput;
+    TextView dateInput;
     EditText titleInput;
     EditText textInput;
     Button addNotesButton;
@@ -26,6 +28,8 @@ public class NotesAdd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes_add);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         dateInput=findViewById(R.id.input_date);
         titleInput=findViewById(R.id.input_title);
@@ -41,6 +45,12 @@ public class NotesAdd extends AppCompatActivity {
     }
 
     @Override
+    public boolean onSupportNavigateUp() {
+        this.finish();
+        return  true;
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
 
@@ -48,7 +58,6 @@ public class NotesAdd extends AppCompatActivity {
         String date=today.get(Calendar.DAY_OF_MONTH)+"/"+(today.get(Calendar.MONTH)+1)+"/"+
             today.get(Calendar.YEAR);
         dateInput.setText(date);
-        dateInput.setEnabled(false);
     }
 
     class AddNote extends AsyncTask<Void,Void,Void>{
@@ -98,10 +107,12 @@ public class NotesAdd extends AppCompatActivity {
                 alert.setTitle("Error..");
                 alert.setMessage(error_message);
                 alert.setPositiveButton("Okay, let me retry",null);
+                alert.setCancelable(false);
                 alert.create().show();
             }else{
                 AlertDialog.Builder alert=new AlertDialog.Builder(NotesAdd.this);
                 alert.setTitle("Added");
+                alert.setCancelable(false);
                 alert.setMessage("Your input was added to diary");
                 alert.setPositiveButton("Thanks", new DialogInterface.OnClickListener() {
                     @Override
@@ -109,6 +120,7 @@ public class NotesAdd extends AppCompatActivity {
                         NotesAdd.this.finish();
                     }
                 });
+                alert.create().show();
             }
         }
     }

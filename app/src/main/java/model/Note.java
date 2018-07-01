@@ -44,9 +44,38 @@ public class Note implements Serializable{
         return new Note(date,topic,text);
     }
 
-    /*public static Note getNoteFromDBByID(int id){
-        //Note note=
-    }*/
+    public static void updateNote(final Context context, final int id, final String text, final String title){
+
+        Thread updateNote=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ApplicationDatabase applicationDatabase=ApplicationDatabase.getInstance(context);
+                applicationDatabase.notesDao().updateNodeByText(text,id);
+                applicationDatabase.notesDao().updateNodeByTopic(title,id);
+            }
+        });
+        updateNote.start();
+        try {
+            updateNote.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteNoteFromDB(final int id, final Context context){
+        Thread deleteThread=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ApplicationDatabase.getInstance(context).notesDao().deleteNoteByID(id);
+            }
+        });
+        deleteThread.start();
+        try {
+            deleteThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static List<Note> getNotesFromDB(final Context context){
         final List<Note> notes =new ArrayList<>();

@@ -49,6 +49,9 @@ dependencies {
     testImplementation "android.arch.persistence.room:testing:$room_version"
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
+
+    //Firebase Realtime database
+    implementation 'com.google.firebase:firebase-database:16.0.1'
 }
 
 //Firebase

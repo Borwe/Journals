@@ -38,8 +38,6 @@ public class NotesPage extends AppCompatActivity {
         recyclerView=findViewById(R.id.notes_recycler);
         notes=Note.getNotesFromDB(NotesPage.this);
 
-        Toast.makeText(getApplicationContext(),notes.size()+" SIZE ",Toast.LENGTH_LONG).show();
-
         RecyclerView.LayoutManager recyclerManager=new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(recyclerManager);
         recyclerView.setAdapter(new NotesAdapter(notes));
@@ -58,6 +56,7 @@ public class NotesPage extends AppCompatActivity {
             case R.id.add_note_menu_item:
                 Intent add_notes=new Intent(NotesPage.this,NotesAdd.class);
                 startActivity(add_notes);
+                break;
         }
         return true;
     }
@@ -82,7 +81,12 @@ public class NotesPage extends AppCompatActivity {
             final Note note=notes.get(position);
             holder.note_time.setText(note.getDate());
             holder.note_title.setText(note.getTopic());
-            String text=note.getText().substring(0,8)+"...";
+            String text="";
+            if(note.getText().length()>=8){
+                text=note.getText().substring(0,8)+"...";
+            }else{
+                text=note.getText();
+            }
             holder.note_text.setText(text);
 
             holder.main.setOnClickListener(new View.OnClickListener() {

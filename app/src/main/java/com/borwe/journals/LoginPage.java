@@ -108,12 +108,10 @@ public class LoginPage extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user){
         if(user!=null){
-            Toast.makeText(LoginPage.this,"User IS: "+user.getDisplayName(),Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(LoginPage.this,NotesPage.class);
             startActivity(intent);
             this.finish();
         }else{
-            Toast.makeText(LoginPage.this,"No User Fuck!!",Toast.LENGTH_SHORT).show();
             AlertDialog.Builder alert=new AlertDialog.Builder(LoginPage.this);
             alert.setMessage("You need a Gmail account to use this\n application, please\n Use or Create one to use");
             alert.setPositiveButton("Okay, Let me try",null);
