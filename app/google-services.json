@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "113765251508-ja2r2grirsduidp8eebdb8qolnle14fu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.borwe.journals",
+            "certificate_hash": "47a414d870d54e868a62d7bd0adb10e34738d9d6"
+          }
+        },
+        {
           "client_id": "113765251508-m74anmc8ie9p1df3cq1j0kl03q538d6i.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "113765251508-m74anmc8ie9p1df3cq1j0kl03q538d6i.apps.googleusercontent.com",
+              "client_id": "113765251508-4k3d7qd5ornkm447t8dlcdkj6l1n3s26.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
